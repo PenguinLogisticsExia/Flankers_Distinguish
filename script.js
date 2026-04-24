@@ -74,7 +74,7 @@ const branches = {
         hint: "<br> <img src='images/ws-10.png' width='200'>",
         options: [
             {text: "[是]", next: "ws10"},
-            {text: "[否]", result: {name: "苏-27SK/歼-11A 早期型", desc: "第一批引进的苏-27SK/国产歼-11A，仍使用AL-31F发动机"}}
+            {text: "[否]", result: {name: "苏-27SK/歼-11A 早期型", desc: "第一批引进中国的苏-27SK/国产歼-11A，仍使用AL-31F发动机"}}
         ]
     },
     ws10: {
@@ -115,6 +115,22 @@ const branches = {
         options: [
             {text: "[有]", next: "canard"},
             {text: "[无]", next: "no_canard"}
+        ]
+    },
+    no_canard: {
+        question: "尾喷管长这样吗？",
+        hint: "<br> <img src='images/ws-10.png' width='200'>",
+        options: [
+            {text: "[是]", result: {name: "歼-11D", desc: "使用新航电系统和复合材料的歼-11，但数量稀少"}},
+            {text: "[否]", next: "no_ws10"}
+        ]
+    },
+    no_ws10: {
+        question: "有空中加油装置吗？",
+        hint: " ",
+        options: [
+            {text: "[有]", result: {name: "苏-27SKM", desc: "苏-27SK的现代化出口版本"}},
+            {text: "[无]", result: {name: "苏-27SM/SM2/SM3", desc: "苏-27S的中期改进型"}},
         ]
     },
     canard: {
